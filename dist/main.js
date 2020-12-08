@@ -1,0 +1,1 @@
+console.log("这里是index.js"),console.log("看看能否压缩");

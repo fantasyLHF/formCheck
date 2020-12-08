@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box0 {
+            position: relative;
+            height: 400px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-indent: 100px;
+        }
+
+        .box0>div {
+            width: 400px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            color: red;
+        }
+
+        .box0 input {
+            position: absolute;
+            left: 100px;
+        }
+
+        /* 滑动验证 */
+        .box {
+            border: 4px solid #999;
+            width: 334px;
+            margin: 50px auto 0;
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        .img-box {
+            background: url("./chan1.jpg") no-repeat 0 0;
+            height: 334px;
+            position: relative;
+        }
+
+        .slide-box {
+            height: 40px;
+            position: relative;
+        }
+
+        .block {
+            width: 40px;
+            height: 40px;
+            background-color: #666;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .pin {
+            left: 0;
+            top: 50px;
+            background-image: url("./chan1.jpg");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            z-index: 10;
+        }
+
+        .white {
+            left: 100px;
+            top: 50px;
+            background-color: #fff;
+            z-index: 9;
+        }
+
+        .block-box {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+
+        .layer {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            z-index: 5;
+            display: none;
+            /* background-color: rgba(0, 0, 0, .3); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box0">
+        <h2>注册</h2>
+        手机号：<input type="text" id="tel" />
+        <div></div>
+        昵称：<input type="text" id="name" />
+        <div></div>
+        密码：<input type="password" id="password" />
+        <div></div>
+        确认密码：<input type="password" id="checkagain" />
+        <div></div>
+        <input type="button" value="注册">
+    </div>
+    <!-- 滑动验证 -->
+    <div class="box">
+        <div class="img-box">
+            <span class="pin block-box"></span>
+            <span class="white block-box"></span>
+        </div>
+        <div class="slide-box">
+            <div class="block"></div>
+            <div class="layer"></div>
+        </div>
+    </div>
+
+    <!-- 引入滑动验证 -->
+    <script src="./dist/index.js"></script>
+</body>
+
+</html>
